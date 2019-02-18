@@ -58,7 +58,12 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.identifier, for: indexPath) as! CustomTableViewCell
         cell.nameLabel.text = tableData?.rows?[indexPath.row].title
         cell.detailLabel.text = tableData?.rows?[indexPath.row].description
+        if let imageURLString = tableData?.rows?[indexPath.row].imageHref, let imageURL = URL(string: imageURLString) {
+                cell.sdImageView.sd_setImage(with: imageURL, placeholderImage: nil, options: .progressiveDownload, completed: nil)
+        }
+        cell.layoutIfNeeded()
         return cell
     }
+
 }
 

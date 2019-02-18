@@ -22,7 +22,7 @@ class View: UIView {
     }
     
     private func tableFactory() {
-        tableView = UITableView(frame: self.bounds, style: .grouped)
+        tableView = UITableView(frame: self.bounds, style: .plain)
         guard let tableView = tableView else { return }
         tableView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(tableView)
