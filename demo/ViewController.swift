@@ -12,7 +12,8 @@ class ViewController: UIViewController {
     
     private var tableView: UITableView?
     private var tableData: Country?
-    
+    let contentProvider = ContentProvider()
+
     enum Constants {
         static let jsonURL = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
         static let identifier = "customCellReuseIdentifier"
@@ -25,17 +26,24 @@ class ViewController: UIViewController {
         let customView = self.view as? View
         tableView = customView?.tableView
         self.view.backgroundColor = .white
+        let pullRefresh = UIRefreshControl()
+        pullRefresh.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+        tableView?.refreshControl = pullRefresh
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let contentProvider = ContentProvider()
         tableView?.delegate = self
         tableView?.dataSource = self
         registerCell()
+        reloadData()
+    }
+    
+    @objc private func reloadData() {
         contentProvider.getContent(urlString: Constants.jsonURL) {[weak self] (result) in
             self?.tableData = result
             self?.tableView?.reloadData()
+            self?.tableView?.refreshControl?.endRefreshing()
         }
     }
     
@@ -58,7 +66,12 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.identifier, for: indexPath) as! CustomTableViewCell
         cell.nameLabel.text = tableData?.rows?[indexPath.row].title
         cell.detailLabel.text = tableData?.rows?[indexPath.row].description
+        if let imageURLString = tableData?.rows?[indexPath.row].imageHref, let imageURL = URL(string: imageURLString) {
+                cell.sdImageView.sd_setImage(with: imageURL, placeholderImage: nil, options: .progressiveDownload, completed: nil)
+        }
+        cell.layoutIfNeeded()
         return cell
     }
+
 }
 

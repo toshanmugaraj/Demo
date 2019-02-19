@@ -19,6 +19,8 @@ struct NetworkLayer {
             if let localUrl = localUrl {
                 let data = try? Data.init(contentsOf: localUrl, options: .uncached)
                 callback(data, error)
+            } else {
+                callback(nil, error)
             }
         }.resume()
     }
