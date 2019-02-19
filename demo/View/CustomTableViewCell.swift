@@ -70,8 +70,6 @@ class CustomTableViewCell: UITableViewCell {
         sdImageView.sd_cancelCurrentAnimationImagesLoad()
         sdImageView.sd_cancelCurrentImageLoad()
         sdImageView.image = nil
-        sdImageView.frame.size = CGSize.init(width: sdImageView.frame.size.width, height: 60)
-        self.frame.size = CGSize.init(width: self.frame.size.width, height: 100)
     }
     
     required init?(coder aDecoder: NSCoder) {

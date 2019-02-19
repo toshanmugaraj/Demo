@@ -18,11 +18,12 @@ class View: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        tableFactory()
+        tableFactory()        
     }
     
     private func tableFactory() {
         tableView = UITableView(frame: self.bounds, style: .plain)
+        
         guard let tableView = tableView else { return }
         tableView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(tableView)

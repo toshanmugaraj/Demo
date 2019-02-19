@@ -18,8 +18,10 @@ class ContentProvider: NSObject  {
             if let resultData = data, let asciString = String(data: resultData, encoding: .ascii), let utfData = asciString.data(using: .utf8) {
 //                    CacheLayer.cache(data: utfData, key: urlString)
                     let country = try? JSONDecoder().decode(Country.self, from: utfData)
+                    var filteredCountry = country
+                    filteredCountry?.rows = country?.rows?.filter { !($0.title == nil && $0.description == nil && $0.imageHref == nil) }
                     DispatchQueue.main.async {
-                        callback(country)
+                        callback(filteredCountry)
                     }
             }
         }
