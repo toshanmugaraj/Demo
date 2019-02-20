@@ -5,7 +5,7 @@ use_frameworks!
 
 target 'demo' do
   
-pod 'SDWebImage'
+pod 'SDWebImage', '4.4.3'
 pod 'SwiftLint'
 pod 'Mockingjay'
 
