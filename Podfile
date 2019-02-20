@@ -1,6 +1,6 @@
 
-# platform :ios, '11.0'
-  use_frameworks!
+platform :ios, '11.0'
+use_frameworks!
 
 
 target 'demo' do

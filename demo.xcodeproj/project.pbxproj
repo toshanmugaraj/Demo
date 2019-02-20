@@ -359,7 +359,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-demoTests/Pods-demoTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Mockingjay-Core/Mockingjay.framework",
-				"${BUILT_PRODUCTS_DIR}/URITemplate-iOS12.0/URITemplate.framework",
+				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
@@ -410,7 +410,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-demo/Pods-demo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/URITemplate-iOS11.0/URITemplate.framework",
+				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
