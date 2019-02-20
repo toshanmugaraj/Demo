@@ -1,11 +1,11 @@
 
-# platform :ios, '11.0'
-  use_frameworks!
+platform :ios, '11.0'
+use_frameworks!
 
 
 target 'demo' do
   
-pod 'SDWebImage'
+pod 'SDWebImage', '4.4.3'
 pod 'SwiftLint'
 pod 'Mockingjay'
 

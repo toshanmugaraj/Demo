@@ -9,28 +9,36 @@
 import XCTest
 import Quick
 import Nimble
-import Mockingjay
+
 @testable import demo
 
 class demoTests: QuickSpec {
     
     override func spec() {
-        beforeEach {
-//            let body = self.loadJSONStub(fileName: "mock.json", bundle: bundle)
-//            let data = jsonData(body.data(using: .utf8)!)
-            
-            
-        }
+        
         describe("When data request is sent") {
-            it("can test the response") {
-                var country: Country?
-                waitUntil { done in
-                ContentProvider().getContent(urlString: "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json", callback: { (result) in
-                     expect(result).notTo(beNil())
-                     done()
-                })
+            var testFile: String?
+            
+            beforeEach {
+                testFile = nil
+                if let filePath = self.mockURLPath(fileName: "mock", bundle: Bundle(for: demoTests.self)) {
+                    testFile = "file://\(filePath)"
                 }
             }
+            it("can test the response") {
+                var country: Country?
+                ContentProvider().getContent(urlString: testFile!, callback: { (result) in
+                    country = result
+                })
+                expect(country?.rows?.count).toEventually(equal(1))
+            }
         }
+    }
+    
+     func mockURLPath(fileName: String, bundle: Bundle) -> String? {
+        guard let filePath = bundle.path(forResource: fileName, ofType: "json")  else {
+           return nil
+        }
+        return filePath
     }
 }

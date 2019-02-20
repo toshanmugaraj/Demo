@@ -16,6 +16,7 @@
 		1B4C9E56221285FB0089B900 /* ContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4C9E55221285FB0089B900 /* ContentProvider.swift */; };
 		1B4C9E5822128F880089B900 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4C9E5722128F880089B900 /* Model.swift */; };
 		1B4C9E5A221292590089B900 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4C9E59221292590089B900 /* NetworkLayer.swift */; };
+		1BA9971E221D4B96005A8C01 /* mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BA9971C221D4874005A8C01 /* mock.json */; };
 		1BF7355A221BD5FD00C48621 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF73558221BD5FD00C48621 /* CustomTableViewCell.swift */; };
 		1BF7355B221BD5FD00C48621 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF73559221BD5FD00C48621 /* View.swift */; };
 		413821AD066BC55AEA74B076 /* Pods_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F565908E236E62A03FA9602 /* Pods_demo.framework */; };
@@ -55,6 +56,7 @@
 		1B4C9E55221285FB0089B900 /* ContentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentProvider.swift; sourceTree = "<group>"; };
 		1B4C9E5722128F880089B900 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1B4C9E59221292590089B900 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		1BA9971C221D4874005A8C01 /* mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock.json; sourceTree = "<group>"; };
 		1BF73558221BD5FD00C48621 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		1BF73559221BD5FD00C48621 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		1F565908E236E62A03FA9602 /* Pods_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +135,7 @@
 		1B4C9E3922127DCA0089B900 /* demoTests */ = {
 			isa = PBXGroup;
 			children = (
+				1BA9971C221D4874005A8C01 /* mock.json */,
 				1B4C9E3A22127DCA0089B900 /* demoTests.swift */,
 				1B4C9E3C22127DCA0089B900 /* Info.plist */,
 			);
@@ -310,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BA9971E221D4B96005A8C01 /* mock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +359,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-demoTests/Pods-demoTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Mockingjay-Core/Mockingjay.framework",
-				"${BUILT_PRODUCTS_DIR}/URITemplate-iOS12.0/URITemplate.framework",
+				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
@@ -406,7 +410,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-demo/Pods-demo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/URITemplate-iOS11.0/URITemplate.framework",
+				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
